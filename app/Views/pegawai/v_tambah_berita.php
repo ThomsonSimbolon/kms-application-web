@@ -1,0 +1,116 @@
+<?= $this->extend('template/templates_pegawai/index'); ?>
+
+
+<?= $this->section('content-pgw'); ?>
+<div class="container-fluid">
+    <!-- Topbar Breadcrumb -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <?php foreach ($breadcrumb as $key => $link) : ?>
+            <?php if ($key === 'Active Page') : ?>
+            <li class="breadcrumb-item active" aria-current="page"><?= $link ?></li>
+            <?php else : ?>
+            <li class="breadcrumb-item"><a href="<?= $link ?>"><?= $key ?></a></li>
+            <?php endif; ?>
+            <?php endforeach; ?>
+        </ol>
+    </nav>
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow">
+                <div class="card-header d-flex align-items-center justify-content-between">
+                    <h4 class="card-title my-0 text-primary">Tambah Data Berita</h4>
+                    <a href="<?= base_url('pegawai/berita/create'); ?>" class="text-danger"><i
+                            class="fa-solid fa-xmark"></i></a>
+                </div>
+
+                <!-- Notifikasi berhasil tambah pengetahuan -->
+                <?php if (session('success')) : ?>
+                <div class="alert alert-success" role="alert" id="success-alert">
+                    <?= session('success'); ?>
+                </div>
+                <?php endif; ?>
+
+                <!-- Notifikasi gagal tambah pengetahuan -->
+                <?php if (session('failed')) : ?>
+                <div class="alert alert-danger" role="alert" id="error-alert">
+                    <?= session('failed'); ?>
+                </div>
+                <?php endif; ?>
+
+                <?php $validation = \Config\Services::validation(); ?>
+                <div class="card-body">
+                    <form action="<?= site_url('pegawai/berita/create') ?>" method="post" enctype="multipart/form-data"
+                        autocomplete="off">
+                        <?= csrf_field() ?>
+                        <div class="form-group">
+                            <label for="judul">Judul</label>
+                            <input type="text"
+                                class="form-control  <?= session('errors.judul') ? 'is-invalid' : null ?>" id="judul"
+                                name="judul" value="<?= old('judul'); ?>" placeholder="Masukkan judul...">
+                            <?php if (session('errors.judul')) : ?>
+                            <div class="invalid-feedback">
+                                <?= session('errors.judul') ?>
+                            </div>
+                            <?php endif ?>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="isi">Isi</label>
+                            <textarea class="form-control  <?= session('errors.isi') ? 'is-invalid' : null ?>"
+                                id="deskripsi" name="isi" rows="5" cols="10"><?= old('isi'); ?></textarea>
+                            <?php if (session('errors.isi')) : ?>
+                            <div class="invalid-feedback">
+                                <?= session('errors.isi') ?>
+                            </div>
+                            <?php endif ?>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="penulis">Penulis</label>
+                            <input type="text"
+                                class="form-control  <?= session('errors.penulis') ? 'is-invalid' : null ?>"
+                                id="penulis" name="penulis" value="<?= old('penulis'); ?>"
+                                placeholder="Masukkan penulis...">
+                            <?php if (session('errors.penulis')) : ?>
+                            <div class="invalid-feedback">
+                                <?= session('errors.penulis') ?>
+                            </div>
+                            <?php endif ?>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="url">Url</label>
+                            <input type="text" class="form-control  <?= session('errors.url') ? 'is-invalid' : null ?>"
+                                id="url" name="url" value="<?= old('url'); ?>" placeholder="Masukkan url...">
+                            <?php if (session('errors.url')) : ?>
+                            <div class="invalid-feedback">
+                                <?= session('errors.url') ?>
+                            </div>
+                            <?php endif ?>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="file">File</label>
+                            <div class="custom-file">
+                                <input type="file"
+                                    class="custom-file-input <?= session('errors.file_path') ? 'is-invalid' : '' ?>"
+                                    id="file" name="file_path">
+                                <label class="custom-file-label" for="file">Choose file</label>
+                                <?php if (session('errors.file_path')) : ?>
+                                <div class="invalid-feedback">
+                                    <?= session('errors.file_path') ?>
+                                </div>
+                                <?php endif ?>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?= $this->endSection(); ?>

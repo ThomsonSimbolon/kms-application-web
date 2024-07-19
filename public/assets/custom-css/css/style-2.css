@@ -1,0 +1,205 @@
+:root {
+  --bg-white: #fff !important;
+  --bg-soft-blue: #6777ef !important;
+  --bg-hover-moderate-blue: #6370cc !important;
+  --bg-light-gray: #d3d3d3 !important;
+  --bg-gray: #808080 !important;
+  --bg-very-light-gray: #efefef !important;
+  --bg-dark: #000 !important;
+  --bg-dark-hover: #7077a1 !important;
+}
+
+::selection {
+  background: var(--bg-hover-moderate-blue);
+  color: var(--bg-white);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+  scroll-behavior: smooth !important;
+}
+
+.btn-aksi {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 155, 3, 1) 50%,
+    rgba(255, 231, 0, 1) 100%
+  );
+
+  transition: all 0.3s ease-in-out !important;
+}
+
+.btn-aksi:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 124, 3, 1) 50%,
+    rgba(255, 224, 0, 1) 100%
+  );
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer.sticky-footer {
+  position: sticky;
+  top: 100vh; /* Ensures the footer stays at the bottom */
+  background-color: #f8f9fa; /* Same as the background color of your footer */
+}
+
+.container-fluid {
+  max-width: 1300px !important;
+  width: 100% !important;
+}
+
+.navbar .navbar-nav > li > a {
+  color: var(--bg-dark) !important;
+  cursor: pointer;
+}
+
+.navbar .collapse .navbar-nav .nav-item a.active {
+  color: var(--bg-soft-blue) !important;
+}
+
+.navbar .navbar-nav > li > a:hover {
+  color: var(--bg-dark-hover) !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+/* .navbar .navbar-nav .nav-1 {
+  display: flex !important;
+  align-items: center !important;
+} */
+
+.navbar .navbar-nav .nav-2 {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.navbar .navbar-nav .nav-1 .nav-link {
+  position: relative;
+}
+
+.navbar .navbar-nav .nav-1 .nav-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px !important;
+  visibility: visible !important;
+  background: var(--bg-hover-moderate-blue);
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar .navbar-nav .nav-1 .nav-link:hover::before {
+  width: 100% !important;
+  visibility: visible !important;
+}
+
+.logo {
+  max-width: 50px !important;
+  width: 100% !important;
+  max-height: 50px !important;
+  height: 100% !important;
+}
+
+.logo-profile {
+  max-width: 30px !important;
+  width: 100% !important;
+  max-height: 30px !important;
+  height: 100% !important;
+}
+
+.side-bar-brand {
+  text-decoration: none !important;
+  clear: both !important;
+  list-style: none !important;
+}
+
+.side-bar-img {
+  max-width: 40px !important;
+  width: 100% !important;
+  max-height: 40px !important;
+  height: 100% !important;
+}
+
+.navbar .nav-item .nav-link {
+  margin: 0px 0.7rem 0px 0.7rem !important;
+}
+
+.side-bar .nav .nav-item .nav-link {
+  color: var(--bg-soft-blue) !important;
+}
+
+.side-bar .nav .nav-item .nav-link:hover,
+.side-bar .nav-item.active .nav-link {
+  transition: all 0.3s ease-in-out !important;
+  color: #fff !important;
+  border-radius: 0.3rem;
+  background-color: #4c3bcf !important;
+}
+
+.content-1 {
+  background-color: #eeeeee !important;
+  border: 1px solid #eeeeee !important;
+}
+
+.content-2 {
+  background-color: #eeeeee !important;
+  border: 1px solid #eeeeee !important;
+}
+
+.content-2 .card .card-header {
+  background-color: #4c3bcf !important;
+  color: var(--bg-white);
+}
+
+.faq .card .card-header-faq {
+  background-color: #4c3bcf !important;
+  color: var(--bg-white);
+}
+
+.notification-item {
+  text-align: start !important;
+}
+
+.sticky-footer {
+  background-color: #e7e7e7;
+}
+
+/* Icon Fontawesome */
+/* .fa-xmark {
+  color: var(--bg-white) !important;
+} */
+
+.fa-xmark:hover {
+  transition: all 0.3s ease-in-out !important;
+  color: var(--bg-very-light-gray) !important;
+}
+
+.fa-paper-plane {
+  color: var(--bg-soft-blue) !important;
+}
+
+.fa-paper-plane:hover {
+  transition: all 0.3s ease-in-out !important;
+  color: #4c3bcf !important;
+}
+/* End Icon FontAwesome */
+
+/* Section Profile */
+.img-profile-all {
+  max-width: 400px !important;
+  width: 100% !important;
+  max-height: 400px !important;
+  height: 100% !important;
+}
+/* End Section Profile */
+
+/* Media screen max-width 990px */
